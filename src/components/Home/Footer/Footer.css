@@ -1,0 +1,28 @@
+.footer-container{
+background-color: black;
+display: flex;
+justify-content: space-between;
+padding:  50px 30px;
+
+}
+.about{
+ 
+}
+.social-icon{
+}
+.copy-right{
+  
+}
+.discription{
+color: whitesmoke;
+}
+.span{
+    color: red;
+}
+@media only screen and (max-width: 600px) {
+    .footer-container{
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        }
+  }

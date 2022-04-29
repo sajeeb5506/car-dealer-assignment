@@ -1,0 +1,22 @@
+.logo{
+    height: 50px; 
+    width: 250px;
+}
+.link{
+    color: white !important;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.link:hover{
+    color: red !important;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.nav-container{
+margin-left: 120px !important;
+
+}

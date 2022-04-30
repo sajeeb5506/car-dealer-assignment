@@ -6,17 +6,32 @@
     color: white !important;
     text-decoration: none;
     margin-left: 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 .link:hover{
     color: red !important;
     text-decoration: none;
     margin-left: 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 .nav-container{
 margin-left: 120px !important;
 
+}
+.active-link{
+    color: red;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+.active-link:hover{
+    color: red !important;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
 }

@@ -17,7 +17,7 @@ const Footer = () => {
                 <p className='discription'>Phone:+80170022002</p>
            </div>
            <div className="copy-right">
-              <p className='discription'>©Copyright 2021 Car Dealer Developed by <span className='span'> Potenzaglobalsolutions</span></p>
+              <p className='discription'>©Copyright 2022 Car Dealer Developed by <span className='span'> Potenzaglobalsolutions</span></p>
                <p className='discription' >Privacy Policy | Terms And Conditions | Contact Us</p>
            </div>
         </div>

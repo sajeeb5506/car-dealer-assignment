@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavLink, } from 'react-bootstrap';
+import { Container, Nav, Navbar,  } from 'react-bootstrap';
 
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../../src/image/logo-light.png'
 import'./Header.css'
 const Header = () => {
@@ -13,10 +13,15 @@ const Header = () => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto nav-container">
-      <Link className='link' to="/">Home</Link>
-      <Link className='link'to="/blog">Blog</Link>
-      <Link className='link'to="/inventory">Inventory</Link>
-      <Link className='link'to="/login">Login</Link>
+    <NavLink className={({ isActive }) =>
+              isActive ? 'active-link' : 'link'} to='/'>Home</NavLink>
+      
+      <NavLink className={({ isActive }) =>
+              isActive ? 'active-link' : 'link'} to="/blog">Blog</NavLink>
+      <NavLink className={({ isActive }) =>
+              isActive ? 'active-link' : 'link'}to="/inventory">Inventory</NavLink>
+      <NavLink className={({ isActive }) =>
+              isActive ? 'active-link' : 'link'}to="/login">Login</NavLink>
    
     </Nav>
   

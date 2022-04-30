@@ -1,28 +1,29 @@
 .footer-container{
 background-color: black;
-display: flex;
-justify-content: space-between;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-gap: 30px;
 padding:  50px 30px;
 
 }
 .about{
- 
+    margin: 0 auto;
 }
 .social-icon{
+margin: 0 auto;
 }
 .copy-right{
-  
+    margin: 0 auto;
 }
 .discription{
 color: whitesmoke;
+font-size: small;
 }
 .span{
     color: red;
 }
 @media only screen and (max-width: 600px) {
     .footer-container{
-        background-color: black;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: repeat(1,1fr);
         }
   }

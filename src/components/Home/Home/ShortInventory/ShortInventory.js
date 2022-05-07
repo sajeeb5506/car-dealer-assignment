@@ -4,7 +4,7 @@ import './ShortInventory.css'
 const ShortInventory = () => {
     const [items, setIrems]=useState([]);
     useEffect(()=>{
-        fetch('items.json')
+        fetch('http://localhost:5000/cars')
         .then(res=>res.json())
         .then(data=>setIrems(data))
     

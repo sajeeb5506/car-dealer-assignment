@@ -1,11 +1,11 @@
 
 import { Route, Routes } from 'react-router-dom';
+import Allcar from './Allcar/Allcar';
 import './App.css';
 import Blog from './components/Blog/Blog';
 import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
 import Home from './components/Home/Home/Home';
-
 import Login from './components/Login/Login';
 import Regestation from './components/Regestation/Regestation';
 import Requiewauth from './RequireAuth/Requiewauth';
@@ -32,6 +32,7 @@ function App() {
       <Route path="/manageitems" element={<ManageItem />} />
       <Route path="/additems" element={<AddItems />} />
       <Route path="/myitems" element={<MyItems />} />
+      
 
       </Routes>
       <Footer/>

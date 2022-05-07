@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState }  from 'react';
+import Allcar from '../../Allcar/Allcar';
+
+
+import './ManageItem.css'
 
 const ManageItem = () => {
+
+    const [items, setIrems]=useState([]);
+    useEffect(()=>{
+        fetch('items.json')
+        .then(res=>res.json())
+        .then(data=>setIrems(data))
+    
+    },[]);
+
+
     return (
         <div>
-            <h1>manage items</h1>
+         <h1 className='text-center my-5'>Our Inventoy Items</h1>
+         <div  className='card-container mb-5'>
+         {
+                  items.map(item=><Allcar
+                   key={item._id}
+                    item={item}
+                  ></Allcar>
+                  
+                  )
+              }
+         </div>
+      
+         
         </div>
     );
 };

@@ -5,10 +5,13 @@ import Blog from './components/Blog/Blog';
 import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
 import Home from './components/Home/Home/Home';
-import Inventory from './components/Inventory/Inventory';
+
 import Login from './components/Login/Login';
 import Regestation from './components/Regestation/Regestation';
 import Requiewauth from './RequireAuth/Requiewauth';
+import AddItems from './UserItems/AddItems/AddItems';
+import ManageItem from './UserItems/ManageItems/ManageItem';
+import MyItems from './UserItems/Myitems/MyItems';
 
 
 function App() {
@@ -17,15 +20,19 @@ function App() {
    <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog" element={
+         <Requiewauth>   <Blog /> </Requiewauth>
+     
+        
+        } />
         <Route path="/login" element={<Login />} />
         <Route path="/regester" element={<Regestation/>} />
-        <Route path="/inventory" element={
-          <Requiewauth>
-            <Inventory />
-          </Requiewauth>
-        } />
+      
     
+      <Route path="/manageitems" element={<ManageItem />} />
+      <Route path="/additems" element={<AddItems />} />
+      <Route path="/myitems" element={<MyItems />} />
+
       </Routes>
       <Footer/>
     </div>

@@ -28,15 +28,47 @@ const Header = () => {
       
       <NavLink className={({ isActive }) =>
               isActive ? 'active-link' : 'link'} to="/blog">Blog</NavLink>
-      <NavLink className={({ isActive }) =>
-              isActive ? 'active-link' : 'link'}to="/inventory">Inventory</NavLink>
+  
    
+
+           {
+             user?
+             <NavLink className={({ isActive }) =>
+              isActive ? 'active-link' : 'link'}to="/manageitems">Manage Items</NavLink>
+          
+              :
+              <NavLink className={({ isActive }) =>
+              isActive ? '' : 'link'}to=""></NavLink>
+           }
+           {
+             user?
+             <NavLink className={({ isActive }) =>
+             isActive ? 'active-link' : 'link'}to="/additems">Add Items</NavLink>
+          
+              :
+              <NavLink className={({ isActive }) =>
+              isActive ? '' : 'link'}to=""></NavLink>
+           }
+           {
+             user?
+             <NavLink className={({ isActive }) =>
+              isActive ? 'active-link' : 'link'}to="/myitems">My Items</NavLink>
+              :
+              <NavLink className={({ isActive }) =>
+              isActive ? '' : 'link'}to=""></NavLink>
+           }
+
+   
+          
+        
    
     </Nav>
     <Nav>
     {
         user?
           //  <Nav.Link  as={Link} to="/login">Sign Out</Nav.Link>
+     
+
           <button className='signout' onClick={handelSignout}>Sign Out</button>
         :
         // <Nav.Link  as={Link} to="/regester">

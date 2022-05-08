@@ -3,7 +3,7 @@ import React from 'react';
 
 import './Allcar.css';
 
-const Allcar = ({item}) => {
+const Allcar = ({item ,handeldelete}) => {
     
 const { _id,name,price,image,discrieption,quantity,supplier}=item;
 
@@ -17,7 +17,7 @@ const { _id,name,price,image,discrieption,quantity,supplier}=item;
             <h3> Price :${price}</h3> 
             <p> Quantity :{quantity}</p> 
             <p> supplier :{supplier}</p> 
-           
+            <p><button className='delete-btn' onClick={()=>handeldelete(_id)} >Delete</button></p>
         
         </div>
     );

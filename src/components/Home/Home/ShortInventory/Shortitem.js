@@ -9,7 +9,7 @@ const Shortitem = ({item}) => {
     return (
 
         <div>
-            <div className='card'>
+            <div className='card text-center'>
 
            <img  className='img' src={image} alt="" />
            <h2>{name}</h2> 
@@ -17,9 +17,8 @@ const Shortitem = ({item}) => {
             <h3> Price :${price}</h3> 
             <p> Quantity :{quantity}</p> 
             <p> supplier :{supplier}</p> 
- 
-
-</div>
+            
+          </div>
         </div>
     );
 };

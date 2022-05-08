@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Shortitem from './Shortitem';
 import './ShortInventory.css'
+import { Link } from 'react-router-dom';
 const ShortInventory = () => {
-    const [items, setIrems]=useState([]);
+
+    const [items, setItems]=useState([]);
     useEffect(()=>{
         fetch('http://localhost:5000/cars')
         .then(res=>res.json())
-        .then(data=>setIrems(data))
+        .then(data=>setItems(data))
     
     },[]);
 
@@ -20,13 +22,14 @@ const ShortInventory = () => {
                  newItems.map(item=><Shortitem
                   key={item._id}
                    item={item}
+
                  ></Shortitem>
                  
                  )
              }
         </div>
      
-        
+         <Link className='link-btn' to="/manageitems">Manage Inventory</Link> 
        </div>
         
     );

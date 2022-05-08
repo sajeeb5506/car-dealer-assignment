@@ -29,7 +29,11 @@ function App() {
         <Route path="/regester" element={<Regestation/>} />
       
     
-      <Route path="/manageitems" element={<ManageItem />} />
+      <Route path="/manageitems" element={
+      <Requiewauth>
+      <ManageItem />
+      </Requiewauth>
+      } />
       <Route path="/additems" element={<AddItems />} />
       <Route path="/myitems" element={<MyItems />} />
       

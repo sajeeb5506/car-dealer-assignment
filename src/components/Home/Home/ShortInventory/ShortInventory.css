@@ -5,6 +5,15 @@
     padding: 20px;
 
 }
+.link-btn{
+    color: whitesmoke;
+    background-color: red;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+
+}
 @media only screen and (max-width: 600px) {
     .card-container2{
         display: grid;

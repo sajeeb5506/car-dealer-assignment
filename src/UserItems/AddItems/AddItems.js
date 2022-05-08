@@ -34,19 +34,19 @@ const AddItems = () => {
  
  
 
- <input className='mb-2 '  placeholder='Name'{...register("name", { required: true })} />
+ <input className='mb-2 input-field'  placeholder='Name'{...register("name", { required: true })} />
 
- <input className='mb-2 '  defaultValue={user.email} {...register("email",{ required: true })} />
+ <input className='mb-2 input-field'  defaultValue={user.email} {...register("email",{ required: true })} />
 
- <textarea className='mb-2 '  placeholder='Discrieption'{...register("discrieption", { required: true })} />
- <input className='mb-2 '  placeholder='Price' type='number' {...register("price", { required: true })} />
- <input className='mb-2 '  placeholder='Img Url'{...register("image", { required: true })} />
- <input className='mb-2 '  placeholder='Quantity'type='number'  {...register("quantity", { required: true })} />
- <input className='mb-2 '  placeholder='Supplier Name' {...register("supplier", { required: true })} />
+ <textarea className='mb-2 input-field'  placeholder='Discrieption'{...register("discrieption", { required: true })} />
+ <input className='mb-2 input-field'  placeholder='Price' type='number' {...register("price", { required: true })} />
+ <input className='mb-2 input-field'  placeholder='Img Url'{...register("image", { required: true })} />
+ <input className='mb-2 input-field'  placeholder='Quantity'type='number'  {...register("quantity", { required: true })} />
+ <input className='mb-2 input-field'  placeholder='Supplier Name' {...register("supplier", { required: true })} />
 
  {errors.exampleRequired && <span>This field is required</span>}
  
- <input  className='mb-3' type="submit" value='Add Item' />
+ <input  className='mb-3 input-field' type="submit" value='Add Item' />
 </form>
    </div>
     );

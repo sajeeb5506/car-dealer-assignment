@@ -1,0 +1,24 @@
+.inventory-container{
+    display: flex;
+    padding: 30px;
+    
+}
+.delever-btn{
+    border: none;
+    padding: 10px 20px;
+    background-color: rgb(51, 183, 245);
+    color: black;
+    border-radius: 10px;
+
+}
+.input-field{
+    border-radius: 10px;
+    border: 2px solid rgb(223, 89, 89);
+}
+@media only screen and (max-width: 600px) {
+    .inventory-container{
+        display: flex;
+        padding: 30px;
+        flex-direction: column;
+    }
+  }

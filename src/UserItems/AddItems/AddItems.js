@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 const AddItems = () => {
     const [user] = useAuthState(auth);
  
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, reset,  formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
         const url = `http://localhost:5000/cars`;
@@ -22,7 +22,7 @@ const AddItems = () => {
                console.log(result);
            } )
            
-
+           reset();
     };
 
 

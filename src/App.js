@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={
-         <Requiewauth>   <Blog /> </Requiewauth>
+           <Blog /> 
      
         
         } />

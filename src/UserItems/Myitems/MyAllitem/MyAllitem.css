@@ -1,0 +1,13 @@
+.img-table{
+    height: 200px;
+    width: 200px;
+}
+.delete-btn{
+    border: none;
+    background-color: red;
+    color: whitesmoke;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+
+}

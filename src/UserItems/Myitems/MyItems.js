@@ -1,26 +1,60 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
+import MyAllitem from './MyAllitem/MyAllitem';
 
 const MyItems = () => {
+    
+    const [user] = useAuthState(auth);
+    const email= user?.email;
+
     const [items, setItems]=useState([]);
-//   let email= items.email;
-const [user] = useAuthState(auth);
-const email= user?.email;
+    
     useEffect(()=>{
         const url=`http://localhost:5000/myitems?email=${email}`;
-        console.log(url)
+       
         fetch(url)
         
         .then(res=>res.json())
         .then(data=>setItems(data))
    
     },[]);
-    console.log(email)
-    return (
-        <div>
-            <h1>my items{items.length}</h1>
 
+  const handeldelete = id =>{
+
+  const proceed = window.confirm('Are You Sure!');
+  if(proceed){
+    console.log('delet' , id);
+    const url = `http://localhost:5000/cars/${id}`;
+    fetch (url, {
+        method : 'DELETE'
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        if(data.deletedCount>0){
+            const remaining = items.filter(car=> car._id !== id)
+            setItems(remaining);
+
+        }
+        console.log(data);
+    })
+  }
+
+}
+    return (
+        <div >
+            <h1 className='text-center my-5'>My Items</h1>
+            <div className='card-container mb-5'>
+
+            {
+                items.map(item=><MyAllitem
+                 key={item._id}
+                 item={item}
+                 handeldelete={handeldelete}
+                ></MyAllitem>) 
+             }
+            </div>
+           
         </div>
     );
 };

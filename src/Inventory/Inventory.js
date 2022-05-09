@@ -5,7 +5,7 @@ const Inventory = () => {
     const {id } = useParams();
    const [ubdate,setUbdate]=useState([]);
    useEffect(()=>{
-         const url=`http://localhost:5000/cars/${id}`
+         const url=`https://safe-ravine-79811.herokuapp.com/cars/${id}`
          fetch(url)
          .then(res=>res.json())
          .then(data=>setUbdate(data))

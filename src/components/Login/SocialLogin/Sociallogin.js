@@ -1,13 +1,16 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
 import './Sociallogin.css'
 import logo from '../../../../src/image/Google__G__Logo.svg.png'
 const Sociallogin = () => {
 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-    const naviget = useNavigate();
+ 
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from =location.state?.from?.pathname || '/inventory';
  if(loading){
      return <loading/>
  }
@@ -20,9 +23,14 @@ const Sociallogin = () => {
            </div>
          
        }
+       const navigetSocial =event=>{
+
+        navigate('/')
+    }
  
        if (user){
-       naviget('/');
+        navigate('/');
+        navigate(from,{replace:true});
        }
 
     return (
@@ -33,7 +41,7 @@ const Sociallogin = () => {
                 <div style={{height:"2px"}} className="bg-primary w-50"></div>
             </div>
             <button 
-               onClick={() => signInWithGoogle()}
+               onClick={() => signInWithGoogle() & navigetSocial}
             className='btn btn-info w-50 d-block mx-auto'>
                 <img style={{height:'20px'}} src={logo} alt="" />
                 <span className='px-2'>Google Sign In</span></button>

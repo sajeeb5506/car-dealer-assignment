@@ -11,7 +11,7 @@ const MyItems = () => {
     const [items, setItems]=useState([]);
     
     useEffect(()=>{
-        const url=`https://safe-ravine-79811.herokuapp.com/myitems?email=${email}`;
+        const url=`http://localhost:5000/myitems?email=${email}`;
        
         fetch(url)
         
@@ -25,7 +25,7 @@ const MyItems = () => {
   const proceed = window.confirm('Are You Sure!');
   if(proceed){
     console.log('delet' , id);
-    const url = `https://safe-ravine-79811.herokuapp.com/cars/${id}`;
+    const url = `http://localhost:5000/cars/${id}`;
     fetch (url, {
         method : 'DELETE'
     })

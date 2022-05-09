@@ -1,6 +1,9 @@
 .inventory-container{
     display: flex;
     padding: 30px;
+    /* grid-template-columns: repeat(3,1fr);
+    gap: 30px; */
+
     
 }
 .delever-btn{
@@ -14,6 +17,9 @@
 .input-field{
     border-radius: 10px;
     border: 2px solid rgb(223, 89, 89);
+}
+.box{
+    padding: 20px;
 }
 @media only screen and (max-width: 600px) {
     .inventory-container{

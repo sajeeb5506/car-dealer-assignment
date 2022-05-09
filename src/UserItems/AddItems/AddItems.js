@@ -4,12 +4,14 @@ import { useForm } from "react-hook-form";
 import auth from '../../Firebase/Firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 const AddItems = () => {
+
     const [user] = useAuthState(auth);
  
     const { register, handleSubmit, watch, reset,  formState: { errors } } = useForm();
+
     const onSubmit = data => {
         console.log(data)
-        const url = `https://safe-ravine-79811.herokuapp.com/cars`;
+        const url = `http://localhost:5000/cars`;
           fetch(url, {
               method:'POST',
               headers: {
@@ -30,7 +32,7 @@ const AddItems = () => {
     return (
    <div className="w-50 mx-auto">
        <h1 className='text-center my-3'>Add New Item</h1>
-            <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+      <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
  
  
 

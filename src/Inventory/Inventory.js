@@ -11,7 +11,7 @@ const Inventory = () => {
    const [ubdateproduct,setUbdate]=useState([]);
 
    useEffect(()=>{
-         const url=`http://localhost:5000/cars/${id}`
+         const url=`https://safe-ravine-79811.herokuapp.com/cars/${id}`
          fetch(url)
          .then(res=>res.json())
          .then(data=>setUbdate(data))
@@ -38,7 +38,7 @@ const quantities=ubdateproduct.quantity;
 
 console.log(quantities);
     // send data to the server
-    const url =`http://localhost:5000/cars/${id}`;
+    const url =`https://safe-ravine-79811.herokuapp.com/cars/${id}`;
     fetch(url, {
         method: 'PUT',
         headers: {
@@ -58,7 +58,11 @@ console.log(quantities);
 // delever
 const handeldelever=(id)=>{
     console.log(id)
-    const url=`http://localhost:5000/cars/${id}`;
+    // const quentityDelet= quantity-1;
+
+    // const newQuentity= {quantity:quentityDelet}
+
+
  console.log(ubdateproduct.quantity)
 
  if(ubdateproduct.quantity > 0 ){
@@ -70,12 +74,14 @@ const handeldelever=(id)=>{
 else{
     console.log('nooo');
 }
-const deleverquentity = ubdateproduct.quantity;
-console.log(deleverquentity);
-fetch (url,{
-    mathod :'PUT',
+const quantities = ubdateproduct.quantity;
+
+console.log(quantities);
+const url1=`https://safe-ravine-79811.herokuapp.com/cars/${id}`;
+fetch (url1,{
+    method :'PUT',
     headers:{ 'content-type':'application/json'},
-    body: JSON.stringify(deleverquentity)
+    body: JSON.stringify({quantities:quantities})
 
 
 })
@@ -83,7 +89,7 @@ fetch (url,{
 .then(res=>res.json())
 .then(data=>{
     console.log(data);
-    ubdateproduct.quantity=deleverquentity;
+    // ubdateproduct.quantity=quantities;
     setUbdate({...ubdateproduct})
 })
 
@@ -106,7 +112,7 @@ fetch (url,{
             </div>
             <form onSubmit={handleUpdateUser} className="box" >
 
-                <input className='mb-2 input-field'  placeholder='Quantity' name="quantity"  />
+                <input className='mb-2 input-field'  placeholder='Quantity' name="quantity" required />
            
 
                 <input className=' my-3 delever-btn' type="submit" value='Quantity Ubdate' />

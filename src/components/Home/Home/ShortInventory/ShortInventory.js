@@ -6,7 +6,7 @@ const ShortInventory = () => {
 
     const [items, setItems]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/cars')
+        fetch('https://safe-ravine-79811.herokuapp.com/cars')
         .then(res=>res.json())
         .then(data=>setItems(data))
     

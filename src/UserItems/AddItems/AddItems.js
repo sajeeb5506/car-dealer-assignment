@@ -11,7 +11,7 @@ const AddItems = () => {
 
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/cars`;
+        const url = `https://safe-ravine-79811.herokuapp.com/cars`;
           fetch(url, {
               method:'POST',
               headers: {
